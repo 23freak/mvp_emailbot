@@ -15,8 +15,7 @@ def read_email(config_data):
 	result = []
 	for msg in messages:
 		msg.date_lt=datetime.date.today().isoformat()
-		print('Message from:', msg.from_,'\nMessage subject: ', msg.subject,'\nMessage text:', msg.text)
-		result.append(msg.from_ + msg.subject + msg.text)
+		result.append('Message from: ' + msg.from_ + '\nmessage subject: ' + msg.subject + '\nmessage text:' + msg.text)
 		files +=[att.payload for att in msg.attachments if att.filename.endswith(('.pdf','.docx','.jpeg','.xlsx','.png','.jpg'))]  #TODO decode
 	print(files)
 
