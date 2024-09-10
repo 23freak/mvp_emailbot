@@ -33,8 +33,5 @@ def start_message(message):
 		for msg in messages:
 			bot.send_message(config_data['chat_id'], msg)
 
-
-
-
 bot.infinity_polling(skip_pending=True)
 
